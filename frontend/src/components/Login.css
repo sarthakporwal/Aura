@@ -151,7 +151,7 @@ body {
 
 .btn::before {
   content: "";
-  position: absolute;
+  position: relative;
   height: 300%;
   width: 100%;
   background: linear-gradient(#25252b, #ff2770, #25252b, #ff2770);
