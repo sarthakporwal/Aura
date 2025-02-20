@@ -1,0 +1,330 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
+
+/* Copy the contents from style.css and paste here */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+  color: #fff;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #25252b;
+}
+
+.container {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  border: 2px solid #ff2770;
+  box-shadow: 0 0 25px #ff2770;
+  overflow: hidden;
+}
+
+.container .form-box {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  margin-left: 20px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-box.Login .animation {
+  transform: translateX(0%);
+  transition: 0.7s;
+  opacity: 1;
+  transition-delay: calc(0.1s * var(--S));
+}
+
+.container.active .form-box.Login .animation {
+  transform: translateX(-120%);
+  opacity: 0;
+  transition-delay: calc(0.1s * var(--D));
+}
+
+
+.form-box .Login {
+  left: 0;
+  right: 0 40px;
+}
+
+.form-box.Register {
+  right: 0;
+  padding: 0 60px;
+}
+
+.form-box.Register .animation {
+  transform: translateX(120%);
+  transition: 0.7s ease;
+  opacity: 0;
+}
+
+.container.active .form-box.Register .animation {
+  transform: translateX(0%);
+  opacity: 1;
+  transition-delay: calc(0.1s * var(--li));
+}
+
+.form-box h2 {
+  font-size: 32px;
+  text-align: center;
+}
+.form-box .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-top: 25px;
+}
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+  border-bottom: 2px solid #fff;
+  padding-right: 23px;
+  transition: 0.5s;
+}
+
+.input-box input:focus,
+.input-box input:valid {
+  border-bottom: 2px solid #ff2770;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -5px;
+  color: #ff2770;
+}
+.input-box i {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-size: 18px;
+  transform: translateY(-50%);
+  transition: 0.5s;
+}
+
+.input-box input:focus ~ i,
+.input-box input:valid ~ i {
+  color: #ff2770;
+}
+
+.btn {
+  position: relative;
+  width: 100%;
+  height: 45px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid #ff2770;
+  border-radius: 40px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  height: 300%;
+  width: 100%;
+  background: linear-gradient(#25252b, #ff2770, #25252b, #ff2770);
+  top: -100%;
+  left: 0%;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.btn:hover::before {
+  top: 0;
+}
+
+.regi-link {
+  font-size: 14px;
+  text-align: center;
+  margin: 20px 0 10px;
+}
+
+.regi-link a {
+  text-decoration: none;
+  color: #ff2770;
+  font-weight: 600;
+}
+
+.regi-link a:hover {
+  text-decoration: underline;
+}
+
+.info-content {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.info-content.Login {
+  right: 0;
+  text-align: right;
+  padding: 0 40px 60px 150px;
+}
+.info-content.Login .animation {
+  transform: translateX(0);
+  transition: 0.7s ease;
+  transition-delay: calc(0.1s * var(--D));
+}
+
+.container.active .info-content.Login .animation {
+  transform: translateX(120%);
+  opacity: 0;
+}
+
+.info-content.Register {
+  left: 0;
+  text-align: left;
+  padding: 0 150px 60px 40px;
+  pointer-events: none;
+}
+
+.info-content.Register .animation {
+  transform: translateX(-120%);
+  transition: 0.7s ease;
+
+  
+}
+
+.container.active .info-content.Register .animation {
+  transform: translateX(0%);
+  transition-delay: calc(0.1s * var(--li));
+}
+
+.info-content h2 {
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 1.3;
+}
+
+.info-content p {
+  font-size: 16px;
+}
+
+.container .curved-shape {
+  position: absolute;
+  right: 0px; /* Shifted slightly to cover better */
+  top: -5px; /* Increased height to cover from the top */
+  height: 700px; /* Increased height */
+  width: 850px; /* Increased width */
+  background: linear-gradient(45deg, #25252b, #ff2770);
+  /* transform: rotate(10deg) skewY(40deg); */
+  transform: rotate(10deg) skewY(40deg);
+
+  transform-origin: bottom right;
+  transition: 1.5s ease;
+}
+
+.container.active .curved-shape {
+  transform: rotate(0deg) skewY(0deg);
+}
+
+.container .curved-shape2 {
+  position: absolute;
+  left: 250px;
+  top: 100%;
+  height: 700px;
+  width: 850px;
+  background: #25252b;
+  border-top: 3px solid #ff2770;
+  transform: rotate(0deg) skewY(0deg);
+  transform-origin: bottom left;
+  transition: 1.5s ease;
+}
+
+.container.active .curved-shape2 {
+  transform: rotate(-11deg) skewY(-41deg);
+  transition-delay: 1.2s;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.nav-button {
+  background-color: #ff2770; /* Button background color */
+  color: #fff; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 25px; /* Rounded corners */
+  padding: 10px 20px; /* Padding */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor */
+}
+
+.nav-button:hover {
+  background-color: #e0246a; /* Darker shade on hover */
+}
+
+.hidden {
+   display: none; /* Hide elements with this class */
+}
+
+
+.social-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.social-btn {
+  background-color: #FF2270;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 24px; /* Adjust icon size */
+  transition: background-color 0.3s;
+}
+
+.social-btn:hover {
+  background-color: #FF2270 /* Change color on hover */
+}
+
+.google-btn {
+  color: #db4437; /* Google color */
+}
+
+.github-btn {
+  color: #333; /* GitHub color */
+}
+
+.linkedin-btn {
+  color: #0077b5; /* LinkedIn color */
+}
