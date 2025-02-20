@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form with Profile Picture Upload</title>
+  <style>
+    .google-btn {
+      display: inline-flex;
+      align-items: center;
+      background-color: #4285f4;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .google-btn:hover {
+      background-color: #357ae8;
+    }
+
+    .google-btn img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Registration Form</h2>
+  <form action="/auth/signup" method="POST" enctype="multipart/form-data">
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value="kalp2004mehta@gmail.com" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" value="123456" required><br><br>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="XYZ" required><br><br>
+
+    <label for="regNo">Registration Number:</label>
+    <input type="text" id="regNo" name="regNo" value="20223299" required><br><br>
+
+    <label for="number">Phone Number:</label>
+    <input type="tel" id="number" name="number" value="1234567890" required><br><br>
+
+    <label for="branch">Branch:</label>
+    <input type="text" id="branch" name="branch" value="CSE" required><br><br>
+
+    <label for="year">Year:</label>
+    <input type="number" id="year" name="year" value="2" required><br><br>
+
+    <label for="profilePicture">Profile Picture:</label>
+    <input type="file" id="profilePicture" name="profilePicture" accept="image/*" required><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <br>
+  <a class="google-btn" href="/auth/google">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google logo">
+    Sign in with Google
+  </button>
+</body>
+</html>
