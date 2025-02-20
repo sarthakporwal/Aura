@@ -54,7 +54,7 @@ This project is licensed under the MIT License.
 
 ## Contact
 For any queries or suggestions, feel free to reach out:
-- **Email:** sarthalporwal12@gmail.com
+- **Email:** sarthakporwal12@gmail.com
 
 ---
 Let's boost productivity and make assignments fun!
